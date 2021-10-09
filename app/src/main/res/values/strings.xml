@@ -7,5 +7,7 @@
     <string name="Multiplica">MULTIPLCAR</string>
     <string name="subtração">SUBTRAIR</string>
     <string name="divisao">DIVIDIR</string>
+    <string name="calcular">CALCULAR</string>
+    <string name="resultado">RESULTADO</string>
 
 </resources>
