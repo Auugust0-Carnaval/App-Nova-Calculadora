@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Calculadora - Revisão</string>
+    <string name="Calculadora">CALCULADORA</string>
+    <string name="Insirir">INSIRA O VALOR</string>
+    <string name="outro">OUTRO VALOR</string>
+    <string name="Soma">SOMAR</string>
+    <string name="Multiplica">MULTIPLCAR</string>
+    <string name="subtração">SUBTRAIR</string>
+    <string name="divisao">DIVIDIR</string>
+
+</resources>
