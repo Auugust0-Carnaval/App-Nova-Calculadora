@@ -24,7 +24,7 @@
         app:layout_constraintVertical_bias="0.037" />
 
     <EditText
-        android:id="@+id/insert"
+        android:id="@+id/Insert"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_marginStart="8dp"
@@ -51,7 +51,7 @@
         android:textAlignment="center"
         android:textSize="18dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/insert"
+        app:layout_constraintStart_toEndOf="@+id/Insert"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="TouchTargetSizeCheck" />
 
@@ -74,8 +74,9 @@
             android:layout_margin="0dp"
             android:layout_marginTop="172dp"
             android:fontFamily="sans-serif-black"
+            android:onClick="calculate"
             android:text="@string/Soma"
-            android:textColor="@color/purple_700"
+            android:textColor="@color/primaryDarkColor"
             android:textSize="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.507"
@@ -88,7 +89,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-black"
             android:text="@string/Multiplica"
-            android:textColor="@color/purple_700"
+            android:textColor="@color/primaryDarkColor"
             android:textSize="20dp"
             android:layout_marginTop="10dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -100,7 +101,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-black"
             android:text="@string/subtração"
-            android:textColor="@color/purple_700"
+            android:textColor="@color/primaryDarkColor"
             android:textSize="20dp"
             android:layout_marginTop="10dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -112,7 +113,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-black"
             android:text="@string/divisao"
-            android:textColor="@color/purple_700"
+            android:textColor="@color/primaryDarkColor"
             android:textSize="20dp"
             android:layout_marginTop="10dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -133,6 +134,7 @@
         app:layout_constraintTop_toBottomOf="@+id/radio" />
 
     <TextView
+        android:id="@+id/result"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
