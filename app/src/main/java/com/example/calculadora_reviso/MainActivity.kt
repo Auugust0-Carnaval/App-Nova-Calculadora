@@ -1,64 +1,44 @@
 package com.example.calculadora_reviso
 
-
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity//
 import android.os.Bundle//
-import android.provider.AlarmClock.EXTRA_MESSAGE//
-import android.view.LayoutInflater
-//import android.view.LayoutInflater
-import android.view.View
-
+import android.widget.Toast
 import com.example.calculadora_reviso.databinding.ActivityMainBinding
+import java.text.DecimalFormat
 
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(LayoutInflater)
+        binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        binding.calculate.setOnClickListener{ calculate() }
-    }
 
-    private fun calculate(view: View){
-        val InsertEdit = binding.Insert
-        val Insert2Edit = binding.Insert2
-        val selectedid = binding.radio.checkedRadioButtonId
-
-        //convertendo variaveis
-
-        val N1 = InsertEdit.text.toString().toInt()
-        val N2 = Insert2Edit.text.toString().toInt()
-
-        val calculo = Calculadora().somar(N1 , N2).toString()
-        val intent = Intent(this, MainActivity::class.java).apply {
-            putExtra(EXTRA_MESSAGE, calculo)
-        }
-        startActivity(intent)
-    }
-
-
-
-    class Calculadora {
-        fun somar(N1 : Int, N2 : Int) : Int
-        {
-            val result = N1 + N2
-            return(result)
+        binding.calculate.setOnClickListener{
+            calculate()
+            val toast = Toast.makeText(this, "Sucesso ao calcular", Toast.LENGTH_SHORT)
+            toast.show()
         }
     }
 
+               fun calculate(){
+                  val InsertEdit = binding.Insert
+                  val Insert2Edit = binding.Insert2
+                  val selectedid = binding.radio.checkedRadioButtonId
 
+                  //convertendo variaveis
 
+                  val N1 = InsertEdit.text.toString().toInt()
+                  val N2 = Insert2Edit.text.toString().toInt()
 
+                   val tipcalculation = when (selectedid){
+                       R.id.add -> Calculadora().somar(N1, N2)
+                       R.id.multiply -> Calculadora().multiplicar(N1, N2)
+                       R.id.subtract -> Calculadora().menos(N1, N2)
+                       else -> Calculadora().divisao(N1, N2)
+                   }
 
-
-
-
-
-
-
-
-
-
+                   val tipResult = DecimalFormat().format(tipcalculation)
+                   binding.result.text = tipResult
+              }
 }
