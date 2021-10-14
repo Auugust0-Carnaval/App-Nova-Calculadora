@@ -22,15 +22,17 @@ class MainActivity : AppCompatActivity() {
     }
 
                fun calculate(){
-                  val InsertEdit = binding.Insert
-                  val Insert2Edit = binding.Insert2
-                  val selectedid = binding.radio.checkedRadioButtonId
+                  val InsertEdit = binding.Insert //edittext
+                  val Insert2Edit = binding.Insert2//editText
+                  val selectedid = binding.radio.checkedRadioButtonId//RadioButton selecionado
 
                   //convertendo variaveis
 
-                  val N1 = InsertEdit.text.toString().toInt()
-                  val N2 = Insert2Edit.text.toString().toInt()
+                  val N1 = InsertEdit.text.toString().toInt() //conveti as variavies para int
+                  val N2 = Insert2Edit.text.toString().toInt() //conveti as variavies para int
 
+                   //criei uma variavel com uma estrutura de decisao, se um radiobutton for selecionado executa
+                   //uma funçao, com os parametros das variaveis (N1 e N2)
                    val tipcalculation = when (selectedid){
                        R.id.add -> Calculadora().somar(N1, N2)
                        R.id.multiply -> Calculadora().multiplicar(N1, N2)

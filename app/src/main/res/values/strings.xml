@@ -9,5 +9,5 @@
     <string name="divisao">DIVIDIR</string>
     <string name="calcular">CALCULAR</string>
     <string name="resultado">RESULTADO</string>
-
+    <style name="Theme.CalculadoraRevisão." parent="Theme.MaterialComponents.DayNight"></style>
 </resources>
